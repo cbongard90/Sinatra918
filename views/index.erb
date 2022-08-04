@@ -1,0 +1,20 @@
+<%# erb: embedded ruby RUBY + HTML %>
+<h1>Welcome to My Restaurant App</h1>
+<h2>Prepared by batch #918</h2>
+<p>The time is now <%= Time.now %></p>
+
+<p>The restaurant list (Unordered):</p>
+
+<ul>
+  <% @restaurants.each do |restaurant| %>
+    <li><%= restaurant.name %></li>
+  <% end %>
+</ul>
+
+<p>The restaurant list (Ordered):</p>
+
+<ol>
+  <% @restaurants.each do |restaurant| %>
+    <li><a href="restaurants/<%= restaurant.id %>"><%= restaurant.name %></a></li>
+  <% end %>
+</ol>
